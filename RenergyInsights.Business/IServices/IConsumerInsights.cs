@@ -1,4 +1,5 @@
 ﻿using RenergyInsights.DTO;
+using RenergyInsights.DTO.Respose;
 
 namespace RenergyInsights.Business.IServices
 {
@@ -6,6 +7,6 @@ namespace RenergyInsights.Business.IServices
     {
 
         public List<string?> GetEnergyConsumersAll();
-        public IEnumerable<ConsumerDetailDto> GetConsumerDetails(string selectedSource);
+        public ServiceResponse<IEnumerable<ConsumerDetailDto>> GetConsumerDetails(string selectedSource);
     }
 }

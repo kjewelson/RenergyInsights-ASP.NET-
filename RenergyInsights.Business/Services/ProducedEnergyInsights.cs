@@ -7,6 +7,7 @@ using RenergyInsights.Business.IServices;
 using RenergyInsights.DAL.DataModels;
 using RenergyInsights.DAL.Interfaces;
 using RenergyInsights.DTO;
+using RenergyInsights.DTO.Respose;
 
 namespace RenergyInsights.Business.Services
 {
@@ -24,9 +25,36 @@ namespace RenergyInsights.Business.Services
             return _producedEnergyRepository.GetAllRenergySources();
         }
 
-        public IEnumerable<SourceDetailDto> GetSourceDetails(string selectedSource)
+        public ServiceResponse<IEnumerable<SourceDetailDto>> GetSourceDetails(string selectedSource)
         {
-            return _producedEnergyRepository.GetSourceDetails(selectedSource);
+            //var response = new ServiceResponse<IEnumerable<SourceDetailDto>>();
+
+            try
+            {
+                var data = _producedEnergyRepository.GetSourceDetails(selectedSource);
+
+                if (data == null || !data.Any())
+                {
+                    return ServiceResponse<IEnumerable<SourceDetailDto>>.Failure(
+                        false,
+                        null,
+                        "Error Occurred while processing the request",
+                        new Dictionary<string, string> { { "DataNotFound", "No records found" } });
+                }
+
+                return ServiceResponse<IEnumerable<SourceDetailDto>>.Success(
+                    true,
+                    data,
+                    "Data retrieved successfully");
+            }
+            catch (Exception ex)
+            {
+                return ServiceResponse<IEnumerable<SourceDetailDto>>.Failure(
+                    false,
+                    null,
+                    "Error Occurred while processing the request",
+                    new Dictionary<string, string> { { "SystemError", ex.Message } });
+            }
         }
     }
 }

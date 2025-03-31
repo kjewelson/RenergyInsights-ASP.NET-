@@ -10,17 +10,18 @@ using System.Text;
 using System.Threading.Tasks;
 using RenergyInsights.DTO;
 using RenergyInsights.DAL.Interfaces;
+using RenergyInsights.Utillities;
 
 namespace RenergyInsights.DAL.Repositories
 {
-    public class ProducedEnergyRepository : IProducedEnergyRepository
+    public class ProducedEnergyRepository : Repository<ProducedEnergy>, IProducedEnergyRepository
     {
 
         private readonly ApplicationDbContext _context;
 
-        public ProducedEnergyRepository()
+        public ProducedEnergyRepository(ApplicationDbContext context) : base(context)
         {
-            _context = new ApplicationDbContext();
+            _context = context;
         }
 
         public List<string?> GetAllRenergySources()
@@ -30,22 +31,13 @@ namespace RenergyInsights.DAL.Repositories
 
         public IEnumerable<SourceDetailDto> GetSourceDetails(string source)
         {
-            string pascalCaseProperty = CultureInfo.CurrentCulture.TextInfo
-                .ToTitleCase(source.Replace("_", " ").ToLower())
-                .Replace(" ", "");
-
-            PropertyInfo property = typeof(ProducedEnergyPivot).GetProperty(pascalCaseProperty);
-
-            if (property == null)
-            {
-                throw new ArgumentException($"Invalid source: {source}");
-            }
+            var propertyInfo = UtilPractice.GetPropertyInfo(source, new ProducedEnergyPivot().GetType());
 
             return _context.ProducedEnergyPivots
                 .AsEnumerable()
                 .Select(e => new SourceDetailDto
                 {
-                    Value = (double)property.GetValue(e),
+                    Value = (double)propertyInfo.GetValue(e),
                     RenewableWasteEnergy = e.RenewableWasteEnergy,
                     Year = e.Year
                 }).OrderByDescending(e => e.Year);

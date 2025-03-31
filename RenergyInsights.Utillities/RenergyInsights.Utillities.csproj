@@ -6,8 +6,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\RenergyInsights.Utillities\RenergyInsights.Utillities.csproj" />
-  </ItemGroup>
-
 </Project>

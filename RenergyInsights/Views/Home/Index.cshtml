@@ -5,43 +5,68 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div>
-    <h2>Welcome to Renewable Energgy Insights</h2>
-    <p>
-        Renergy is an application gives you data analytical insights on the renewable and waste sources in the United Kingdom.
-    </p>
-    <p>The data insights are respresented on this application is based on the follwoing tables</p>
-    <h3>Sources of renewable energy</h3>
-    <ul>
-        <li>Overall top 3 producers</li>
-        <li>Least produces</li>
-        <li>Fact grrowing</li>
-    </ul>
-    <h3>Direct usage of renewable energy </h3>
-    <ul>
-        <li>Top 3 consumers </li>
-        <li>least 3 consumers</li>
-    </ul>
-    <h3>Indirect usage of renewables</h3>
-    <ul>
-            <li>Top ten consumers </li>
-            <li>least eleven consumers</li>
-    </ul>
-</div>
+<div class="container mt-5">
+    <div class="text-center mb-5">
+        <h1 class="display-4 mb-3">Welcome to Renewable Energy Insights</h1>
+        <p class="lead text-muted">
+            Renergy provides analytical insights on renewable and waste energy sources in the United Kingdom,
+            with visualizations showing usage in both direct and reallocated contexts.
+        </p>
 
-
-<div class="text-center">
-    <div class="row">
-        <div class="col-md-6 mb-3">
-            <a href="@Url.Action("Production", "Home")" class="btn btn-primary btn-lg btn-block py-4">
-                <i class="fas fa-icon-name"></i> <!-- Optional icon -->
-                @Configuration["HomeParts:Production"]
-            </a>
+        <div class="alert alert-light border mt-4 mb-5">
+            <small class="text-muted">
+                <strong>Note:</strong> Direct use refers to energy content at point of use. Reallocated energy accounts for transformation/distribution losses.
+            </small>
         </div>
-        <div class="col-md-6 mb-3">
-            <a href="@Url.Action("Consumption", "Home")" class="btn btn-success btn-lg btn-block py-4">
-                @Configuration["HomeParts:Consumption"]
-            </a>
+    </div>
+
+    <div class="row g-4">
+        <!-- Card 1 -->
+        <div class="col-lg-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body d-flex flex-column">
+                    <h3 class="card-title fs-4 mb-3">Sources of Renewable Energy</h3>
+                    <p class="card-text text-secondary flex-grow-1">
+                        Explore various renewable energy sources and their contribution to total production.
+                    </p>
+                    <a href="@Url.Action("Production", "Home")"
+                       class="btn btn-outline-primary align-self-start mt-auto">
+                        @Configuration["HomeParts:Production"]
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="col-lg-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body d-flex flex-column">
+                    <h3 class="card-title fs-4 mb-3">Direct & Reallocated Usage</h3>
+                    <p class="card-text text-secondary flex-grow-1">
+                        View consumption across sectors including agriculture, mining, and manufacturing.
+                    </p>
+                    <a href="@Url.Action("Consumption", "Home")"
+                       class="btn btn-outline-primary align-self-start mt-auto">
+                        @Configuration["HomeParts:Consumption"]
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="col-lg-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body d-flex flex-column">
+                    <h3 class="card-title fs-4 mb-3">Energy Projections</h3>
+                    <p class="card-text text-secondary flex-grow-1">
+                        Contribute future energy projections and scenario modeling.
+                    </p>
+                    <a href="@Url.Action("Error", "Shared")"
+                       class="btn btn-outline-primary align-self-start mt-auto">
+                        Projection Tools
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
 </div>

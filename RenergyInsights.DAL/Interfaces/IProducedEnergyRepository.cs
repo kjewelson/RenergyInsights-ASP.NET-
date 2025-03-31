@@ -6,7 +6,7 @@ using System.Reflection;
 
 namespace RenergyInsights.DAL.Interfaces
 {
-    public interface IProducedEnergyRepository
+    public interface IProducedEnergyRepository : IRepository<ProducedEnergy>
     {
 
         public List<string?> GetAllRenergySources();

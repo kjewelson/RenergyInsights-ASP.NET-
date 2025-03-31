@@ -34,27 +34,29 @@ namespace RenergyInsights.Controllers
 
         public IActionResult Production(string selectedSource = "hydroelectric_power")
         {
-            var result = _producedEnergyInsights.GetEnergyProduction();
+            var pageResult = _producedEnergyInsights.GetEnergyProduction();
 
+            var producerDetail = _producedEnergyInsights.GetSourceDetails(selectedSource);
 
-            if (!string.IsNullOrEmpty(selectedSource))
+            if (producerDetail.Status)
             {
                 ViewBag.SelectedSource = selectedSource;
                 ViewBag.SourceDetails = new SourceDetailsViewModel
                 {
                     SourceName = selectedSource,
                     Description = "Here it comes the desciption about the source" , // Your method
-                    ProductionData = _producedEnergyInsights.GetSourceDetails(selectedSource)  // Your method
+                    ProductionData = producerDetail.Data  // Your method
                 };
             }
 
-            return View(result);
+            return View(pageResult);
         }
 
         public IActionResult Consumption(string selectedConsumer = null)
         {
             var result = _consumerInsights.GetEnergyConsumersAll();
 
+            var consumerDetail = _consumerInsights.GetConsumerDetails(selectedConsumer);
 
             if (!string.IsNullOrEmpty(selectedConsumer))
             {
@@ -63,7 +65,7 @@ namespace RenergyInsights.Controllers
                 {
                     ConsumerName = selectedConsumer,
                     Description = "Here it comes the desciption about the source", // Your method
-                    ConsumerData = _consumerInsights.GetConsumerDetails(selectedConsumer)  // Your method
+                    ConsumerData = consumerDetail.Data  // Your method
                 };
             }
 

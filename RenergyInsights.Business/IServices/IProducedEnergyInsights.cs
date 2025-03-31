@@ -1,5 +1,6 @@
 ﻿using RenergyInsights.DAL.Repositories;
 using RenergyInsights.DTO;
+using RenergyInsights.DTO.Respose;
 
 namespace RenergyInsights.Business.IServices
 {
@@ -8,6 +9,6 @@ namespace RenergyInsights.Business.IServices
 
         public List<string?> GetEnergyProduction();
 
-        public IEnumerable<SourceDetailDto> GetSourceDetails(string selectedSource);
+        public ServiceResponse<IEnumerable<SourceDetailDto>> GetSourceDetails(string selectedSource);
     }
 }

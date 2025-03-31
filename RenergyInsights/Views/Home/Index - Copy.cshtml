@@ -1,0 +1,47 @@
+﻿@using Microsoft.Extensions.Configuration
+@inject IConfiguration Configuration
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div>
+    <h2>Welcome to Renewable Energgy Insights</h2>
+    <p>
+        Renergy is an application gives you data analytical insights on the renewable and waste sources in the United Kingdom.
+    </p>
+    <p>The data insights are respresented on this application is based on the follwoing tables</p>
+    <h3>Sources of renewable energy</h3>
+    <ul>
+        <li>Overall top 3 producers</li>
+        <li>Least produces</li>
+        <li>Fact grrowing</li>
+    </ul>
+    <h3>Direct usage of renewable energy </h3>
+    <ul>
+        <li>Top 3 consumers </li>
+        <li>least 3 consumers</li>
+    </ul>
+    <h3>Indirect usage of renewables</h3>
+    <ul>
+            <li>Top ten consumers </li>
+            <li>least eleven consumers</li>
+    </ul>
+</div>
+
+
+<div class="text-center">
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <a href="@Url.Action("Production", "Home")" class="btn btn-primary btn-lg btn-block py-4">
+                <i class="fas fa-icon-name"></i> <!-- Optional icon -->
+                @Configuration["HomeParts:Production"]
+            </a>
+        </div>
+        <div class="col-md-6 mb-3">
+            <a href="@Url.Action("Consumption", "Home")" class="btn btn-success btn-lg btn-block py-4">
+                @Configuration["HomeParts:Consumption"]
+            </a>
+        </div>
+    </div>
+</div>

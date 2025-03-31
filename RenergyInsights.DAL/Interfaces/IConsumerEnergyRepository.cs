@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using RenergyInsights.DTO;
 using Microsoft.EntityFrameworkCore;
+using RenergyInsights.Utillities;
 
 namespace RenergyInsights.DAL.Interfaces
 {
@@ -18,7 +19,8 @@ namespace RenergyInsights.DAL.Interfaces
 
         public List<string?> GetAllRenergyConsumers();
 
-        public IEnumerable<ConsumerDetailDto> GetbothConsumerDetails(string source);
+        public IEnumerable<ConsumerDetailDto> GetDirectConsumerDetails(string source);
 
+        public IEnumerable<ConsumerDetailDto> GetReallocatedConsumerDetails(string source);
     }
 }

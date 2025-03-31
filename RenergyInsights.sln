@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RenergyInsights.DTO", "Rene
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RenergyInsights.TEST", "RenergyInsights.TEST\RenergyInsights.TEST.csproj", "{32F42B92-91F4-4259-BB21-AC3AC15EA8DB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RenergyInsights.Utillities", "RenergyInsights.Utillities\RenergyInsights.Utillities.csproj", "{F9482516-D3EB-4804-829A-AE2AB967F573}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{32F42B92-91F4-4259-BB21-AC3AC15EA8DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{32F42B92-91F4-4259-BB21-AC3AC15EA8DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{32F42B92-91F4-4259-BB21-AC3AC15EA8DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9482516-D3EB-4804-829A-AE2AB967F573}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9482516-D3EB-4804-829A-AE2AB967F573}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9482516-D3EB-4804-829A-AE2AB967F573}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9482516-D3EB-4804-829A-AE2AB967F573}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
