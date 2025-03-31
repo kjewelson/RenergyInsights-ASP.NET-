@@ -25,4 +25,8 @@
     <ProjectReference Include="..\RenergyInsights.DAL\RenergyInsights.DAL.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\Images\" />
+  </ItemGroup>
+
 </Project>
