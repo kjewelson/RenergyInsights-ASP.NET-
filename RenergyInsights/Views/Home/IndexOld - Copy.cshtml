@@ -1,0 +1,67 @@
+﻿@model List<RenergyInsights.DAL.DataModels.ProducedEnergy>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h5 class="display-4">Lets see the consumption of energy</h5>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Year</th>
+                <th>Renewable Waste Energy</th>
+                <th>Hydroelectric Power</th>
+                <th>Wind, Wave, Tidal</th>
+                <th>Solar Photovoltaic</th>
+                <th>Geothermal Aquifers</th>
+                <th>Landfill Gas</th>
+                <th>Sewage Gas</th>
+                <th>Biogas Autogen</th>
+                <th>Municipal Solid Waste</th>
+                <th>Poultry Litter</th>
+                <th>Straw</th>
+                <th>Wood</th>
+                <th>Wood Dry</th>
+                <th>Wood Seasoned</th>
+                <th>Wood Wet</th>
+                <th>Charcoal</th>
+                <th>Liquid Biofuels</th>
+                <th>Bioethanol</th>
+                <th>Biodiesel</th>
+                <th>Biomass</th>
+                <th>Cross Boundary Adjustment</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Year</td>
+                    @* <td>@item.RenewableWasteEnergy</td>
+                    <td>@item.HydroelectricPower</td>
+                    <td>@item.WindWaveTidal</td>
+                    <td>@item.SolarPhotovoltaic</td>
+                    <td>@item.GeothermalAquifers</td>
+                    <td>@item.LandfillGas</td>
+                    <td>@item.SewageGas</td>
+                    <td>@item.BiogasAutogen</td>
+                    <td>@item.MunicipalSolidWaste</td>
+                    <td>@item.PoultryLitter</td>
+                    <td>@item.Straw</td>
+                    <td>@item.Wood</td>
+                    <td>@item.WoodDry</td>
+                    <td>@item.WoodSeasoned</td>
+                    <td>@item.WoodWet</td>
+                    <td>@item.Charcoal</td>
+                    <td>@item.LiquidBiofuels</td>
+                    <td>@item.Bioethanol</td>
+                    <td>@item.Biodiesel</td>
+                    <td>@item.Biomass</td>
+                    <td>@item.CrossBoundaryAdjustment</td> *@
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

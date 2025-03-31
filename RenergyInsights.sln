@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35707.178
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RenergyInsights", "RenergyInsights\RenergyInsights.csproj", "{FF5817A7-15C6-42AB-9A5A-DA2A8A4C42A0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RenergyInsights.Business", "RenergyInsights.Business\RenergyInsights.Business.csproj", "{982EB016-439A-47FB-A15D-0DAEA3380188}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RenergyInsights.DAL", "RenergyInsights.DAL\RenergyInsights.DAL.csproj", "{FC06825D-B9FE-499D-B7C3-17E16F99F112}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RenergyInsights.DTO", "RenergyInsights.DTO\RenergyInsights.DTO.csproj", "{572D4A64-DAD3-4BF6-8574-C8748CEF3B9E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RenergyInsights.TEST", "RenergyInsights.TEST\RenergyInsights.TEST.csproj", "{32F42B92-91F4-4259-BB21-AC3AC15EA8DB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FF5817A7-15C6-42AB-9A5A-DA2A8A4C42A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF5817A7-15C6-42AB-9A5A-DA2A8A4C42A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF5817A7-15C6-42AB-9A5A-DA2A8A4C42A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF5817A7-15C6-42AB-9A5A-DA2A8A4C42A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{982EB016-439A-47FB-A15D-0DAEA3380188}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{982EB016-439A-47FB-A15D-0DAEA3380188}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{982EB016-439A-47FB-A15D-0DAEA3380188}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{982EB016-439A-47FB-A15D-0DAEA3380188}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC06825D-B9FE-499D-B7C3-17E16F99F112}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC06825D-B9FE-499D-B7C3-17E16F99F112}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC06825D-B9FE-499D-B7C3-17E16F99F112}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC06825D-B9FE-499D-B7C3-17E16F99F112}.Release|Any CPU.Build.0 = Release|Any CPU
+		{572D4A64-DAD3-4BF6-8574-C8748CEF3B9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{572D4A64-DAD3-4BF6-8574-C8748CEF3B9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{572D4A64-DAD3-4BF6-8574-C8748CEF3B9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{572D4A64-DAD3-4BF6-8574-C8748CEF3B9E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32F42B92-91F4-4259-BB21-AC3AC15EA8DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32F42B92-91F4-4259-BB21-AC3AC15EA8DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32F42B92-91F4-4259-BB21-AC3AC15EA8DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32F42B92-91F4-4259-BB21-AC3AC15EA8DB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

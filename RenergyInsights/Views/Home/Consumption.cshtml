@@ -1,0 +1,47 @@
+﻿@model List<string>
+@{
+    ViewData["Title"] = "Consumption";
+}
+
+<div class="row mt-4">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header bg-primary text-white">
+                <h5>Renewable Energy Consumers</h5>
+            </div>
+            <div class="card-body">
+                <ul class="list-group">
+                    @foreach (var item in Model)
+                    {
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            @item
+                            <a asp-action="Consumption"
+                               asp-route-selectedConsumer="@item"
+                               class="btn btn-sm btn-outline-primary">
+                                -> Insights
+                            </a>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        @if (ViewBag.selectedConsumer != null)
+        {
+            <partial name="_ConsumerDetails" model="ViewBag.ConsumerDetails" />
+        }
+        else
+        {
+            <div class="card">
+                <div class="card-header bg-info text-white">
+                    <h5>Consumer Details</h5>
+                </div>
+                <div class="card-body">
+                    <p class="text-muted">Select a source to view details</p>
+                </div>
+            </div>
+        }
+    </div>
+</div>

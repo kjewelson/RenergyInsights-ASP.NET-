@@ -1,0 +1,49 @@
+﻿@model List<string>
+@{
+    ViewData["Title"] = "Production";
+}
+
+<div class="row mt-4">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header bg-primary text-white">
+                <h5>Renewable Energy Sources</h5>
+            </div>
+            <div class="card-body">
+                <ul class="list-group">
+                    @foreach (var item in Model)
+                    {
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            @item
+                            <a asp-action="Production"
+                               asp-route-selectedSource="@item"
+                               class="btn btn-sm btn-outline-primary">
+                                View Details
+                            </a>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        @if (ViewBag.SelectedSource != null)
+        {
+            <partial name="_SourceDetails" model="ViewBag.SourceDetails" />
+        }
+        else
+        {
+            <div class="card">
+                <div class="card-header bg-info text-white">
+                    <h5>Source Details</h5>
+                </div>
+                <div class="card-body">
+                    <p class="text-muted">Select a source to view details</p>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+
